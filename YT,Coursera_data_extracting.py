@@ -1,16 +1,14 @@
 import yt_dlp
 
 def download_video_and_captions(url):
-    # Set options to download video and captions with verbose logging
     ydl_opts = {
-        'format': 'best',  # Download the best quality video
-        'writesubtitles': True,  # Download subtitles if available
-        'writeautomaticsub': True,  # Download auto-generated captions
-        'subtitleslangs': ['en'],  # Specify the language (English in this case)
-        'outtmpl': '%(title)s.%(ext)s',  # Save the file with the video title
-        'verbose': True,  # Enable verbose output for debugging
+        'format': 'best', 
+        'writesubtitles': True,
+        'writeautomaticsub': True,  
+        'subtitleslangs': ['en'], 
+        'outtmpl': '%(title)s.%(ext)s',  
+        'verbose': True,  
     }
-
     with yt_dlp.YoutubeDL(ydl_opts) as ydl:
         ydl.download([url])
 
